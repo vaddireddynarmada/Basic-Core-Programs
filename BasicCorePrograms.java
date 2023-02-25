@@ -3,14 +3,26 @@ import java.util.Scanner;
 
 public class BasicCorePrograms {
     public static void main(String[] args) {
-        vowelOrConsonant('a');
+        Scanner scan = new Scanner(System.in);
+        System.out.println("enter first number : ");
+        int firstNumber = scan.nextInt();
+        System.out.println("enter second number : ");
+        int secondNumber = scan.nextInt();
+        System.out.println("enter third number : ");
+        int thirdNumber = scan.nextInt();
+        largestOfNumbers(firstNumber, secondNumber, thirdNumber);
     }
 
-    public static void vowelOrConsonant(char alphabet) {
-        if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u')
-            System.out.println("Alphabet is Vowel");
-        else
-            System.out.println("Alphabet is consonant");
+    public static void largestOfNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+            System.out.println("First number is largest ");
+        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+            System.out.println("Second number is largest ");
+        } else if (secondNumber == firstNumber & secondNumber == thirdNumber) {
+            System.out.println("Three number are equal ");
+        } else {
+            System.out.println("Third number is largest ");
+        }
     }
 }
 
