@@ -3,18 +3,15 @@ import java.util.Scanner;
 
 public class BasicCorePrograms {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter  number : ");
-        int number = scan.nextInt();
-        evenOdd(number);
+        vowelOrConsonant('a');
     }
 
-    public static void evenOdd(int number) {
-        if (number % 2 == 0) {
-            System.out.println("Number is even");
-        } else {
-            System.out.println("Number is odd");
-        }
+    public static void vowelOrConsonant(char alphabet) {
+        if (alphabet == 'a' || alphabet == 'e' || alphabet == 'i' || alphabet == 'o' || alphabet == 'u')
+            System.out.println("Alphabet is Vowel");
+        else
+            System.out.println("Alphabet is consonant");
     }
 }
+
 
