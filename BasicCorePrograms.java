@@ -4,21 +4,21 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("enter below 31 numbers ");
+        System.out.println("enter number : ");
         int num = scan.nextInt();
-        powerOf2(num);
+        harmonicNumber(num);
     }
 
-    public static void powerOf2(int num) {
-        int result=0;
-        if (num >= 0 && num < 31) {
-            int value = (int) Math.pow(2, num);
+    public static void harmonicNumber(int num) {
+        double result = 0;
+        if (num != 0) {
             for (int i = 1; i <= num; i++) {
-                result=(int) (Math.pow(2, i));
+                result = (double) 1 / i;
             }
-            System.out.println("2 Power "+num+ " is : "+result);
+            System.out.println("Nth Harmonic Value : " + result);
         } else {
-            System.out.println("number is not between 0 to 30 ");
+            System.out.println("do not enter zero");
         }
     }
 }
+
