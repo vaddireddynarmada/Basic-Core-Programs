@@ -4,21 +4,21 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("enter year to check for leap year ");
-        int year = scan.nextInt();
-        leapYear(year);
+        System.out.println("enter below 31 numbers ");
+        int num = scan.nextInt();
+        powerOf2(num);
     }
 
-    public static void leapYear(int year) {
-        if (year >= 1000 && year <= 9999) {
-            if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
-                System.out.println(year + " is a leap year.");
-            } else {
-                System.out.println(year + " is not a leap year.");
+    public static void powerOf2(int num) {
+        int result=0;
+        if (num >= 0 && num < 31) {
+            int value = (int) Math.pow(2, num);
+            for (int i = 1; i <= num; i++) {
+                result=(int) (Math.pow(2, i));
             }
-
+            System.out.println("2 Power "+num+ " is : "+result);
         } else {
-            System.out.println("enter 4 digit number");
+            System.out.println("number is not between 0 to 30 ");
         }
     }
 }
