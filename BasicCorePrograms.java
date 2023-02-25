@@ -6,18 +6,19 @@ public class BasicCorePrograms {
         Scanner scan = new Scanner(System.in);
         System.out.println("enter number : ");
         int num = scan.nextInt();
-        harmonicNumber(num);
+        factors(num);
     }
 
-    public static void harmonicNumber(int num) {
-        double result = 0;
-        if (num != 0) {
-            for (int i = 1; i <= num; i++) {
-                result = (double) 1 / i;
+    public static void factors(int number) {
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                System.out.println(i);
+                number = number / i;
+                System.out.println(number);
             }
-            System.out.println("Nth Harmonic Value : " + result);
-        } else {
-            System.out.println("do not enter zero");
+            else {
+                System.out.println("Number is not prime");
+            }
         }
     }
 }
