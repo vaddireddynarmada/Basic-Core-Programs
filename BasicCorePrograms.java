@@ -3,33 +3,22 @@ import java.util.Scanner;
 
 public class BasicCorePrograms {
     public static void main(String[] args) {
-        int heads = 0;
-        int tails = 0;
         Scanner scan = new Scanner(System.in);
-        System.out.println("enter positive number");
-        int numOfFlips = scan.nextInt();
-        flipCoin(numOfFlips);
+        System.out.println("enter year to check for leap year ");
+        int year = scan.nextInt();
+        leapYear(year);
     }
 
-    public static void flipCoin(int numOfFlips) {
-        int heads = 0;
-        int tails = 0;
-        if (numOfFlips > 0) {
-            for (int i = 1; i <= numOfFlips; i++) {
-                Random r = new Random();
-                int chance = r.nextInt(2);
-                if (chance > 0.5) {
-                    tails++;
-                } else {
-                    heads++;
-                }
+    public static void leapYear(int year) {
+        if (year >= 1000 && year <= 9999) {
+            if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
+                System.out.println(year + " is a leap year.");
+            } else {
+                System.out.println(year + " is not a leap year.");
             }
-            double percentOfHeads = heads * 100 / numOfFlips;
-            double percentOfTails = tails * 100 / numOfFlips;
-            System.out.println("percentOfHeads : " + percentOfHeads);
-            System.out.println("percentOfTails : " + percentOfTails);
+
         } else {
-            System.out.println("enter positive number for coin flip");
+            System.out.println("enter 4 digit number");
         }
     }
 }
