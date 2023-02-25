@@ -4,23 +4,17 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter first number : ");
-        int firstNumber = scan.nextInt();
-        System.out.println("Enter second number : ");
-        int secondNumber = scan.nextInt();
-        swapTwoNumbers(firstNumber, secondNumber);
+        System.out.println("Enter  number : ");
+        int number = scan.nextInt();
+        evenOdd(number);
     }
 
-    public static void swapTwoNumbers(int firstNumber, int secondNumber) {
-        System.out.println("Before swap ");
-        System.out.println("first number : " + firstNumber);
-        System.out.println("second number : " + secondNumber);
-        int temNumber = firstNumber;
-        firstNumber = secondNumber;
-        secondNumber = temNumber;
-        System.out.println("After swap ");
-        System.out.println("first number : " + firstNumber);
-        System.out.println("second number : " + secondNumber);
+    public static void evenOdd(int number) {
+        if (number % 2 == 0) {
+            System.out.println("Number is even");
+        } else {
+            System.out.println("Number is odd");
+        }
     }
 }
 
