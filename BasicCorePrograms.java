@@ -4,24 +4,29 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("enter first number : ");
-        int firstNumber = scan.nextInt();
-        System.out.println("enter second number : ");
-        int secondNumber = scan.nextInt();
-        System.out.println("enter third number : ");
-        int thirdNumber = scan.nextInt();
-        largestOfNumbers(firstNumber, secondNumber, thirdNumber);
+        System.out.println("Enter the number of rows : ");
+        int noOfRows = scan.nextInt();
+        System.out.println("Enter the number of columns : ");
+        int noOfCols = scan.nextInt();
+        twoDArray(noOfRows,noOfCols);
     }
 
-    public static void largestOfNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
-            System.out.println("First number is largest ");
-        } else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
-            System.out.println("Second number is largest ");
-        } else if (secondNumber == firstNumber & secondNumber == thirdNumber) {
-            System.out.println("Three number are equal ");
-        } else {
-            System.out.println("Third number is largest ");
+    public static void twoDArray(int noOfRows, int noOfCols) {
+        Scanner scan = new Scanner(System.in);
+        int[][] arr = new int[noOfRows][noOfCols];
+        int noOfElements = noOfRows * noOfCols;
+        System.out.println("Please enter " + noOfElements + " elements");
+        for (int i = 0; i < noOfRows; i++) {
+            for (int j = 0; j < noOfCols; j++) {
+                arr[i][j] = scan.nextInt();
+            }
+        }
+        System.out.println("The Input array is :");
+        for (int i = 0; i < noOfRows; i++) {
+            for (int j = 0; j < noOfCols; j++) {
+                System.out.print(arr[i][j] + "\t");
+            }
+            System.out.println();
         }
     }
 }
