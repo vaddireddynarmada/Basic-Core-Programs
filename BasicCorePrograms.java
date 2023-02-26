@@ -4,30 +4,29 @@ import java.util.Scanner;
 public class BasicCorePrograms {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the number of rows : ");
-        int noOfRows = scan.nextInt();
-        System.out.println("Enter the number of columns : ");
-        int noOfCols = scan.nextInt();
-        twoDArray(noOfRows,noOfCols);
+        System.out.println("enter elements ");
+        int b = scan.nextInt();
+        int[] a = new int[b];
+        threeIntegerZero(b,a);
     }
 
-    public static void twoDArray(int noOfRows, int noOfCols) {
+    public static void threeIntegerZero(int b,int[] a) {
         Scanner scan = new Scanner(System.in);
-        int[][] arr = new int[noOfRows][noOfCols];
-        int noOfElements = noOfRows * noOfCols;
-        System.out.println("Please enter " + noOfElements + " elements");
-        for (int i = 0; i < noOfRows; i++) {
-            for (int j = 0; j < noOfCols; j++) {
-                arr[i][j] = scan.nextInt();
+        for (int i = 0; i < b; i++) {
+            a[i] = scan.nextInt();
+        }
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                for (int l = j + 1; l < a.length; l++) {
+                    if (a[i] + a[j] + a[l] == 0) {
+                        System.out.println("Found 3 elements whose sum is = 0");
+                        System.out.println("Elements are " + a[i] + " " + a[j] + " " + a[l]);
+                        return;
+                    }
+                }
             }
         }
-        System.out.println("The Input array is :");
-        for (int i = 0; i < noOfRows; i++) {
-            for (int j = 0; j < noOfCols; j++) {
-                System.out.print(arr[i][j] + "\t");
-            }
-            System.out.println();
-        }
+        System.out.println("Did not find 3 elements whose sum is = 0");
     }
 }
 
